@@ -19,6 +19,7 @@ export class AuthService {
 
   async signup(dto: AuthDto) {
     // generate the password hash
+    // argon is better for bcryptjs 
     const hash = await argon.hash(dto.password);
     // save the new user in the db
     try {
